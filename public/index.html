@@ -46,9 +46,13 @@
         </div>
       </div>
 
-      <div class="star-stage" data-star-stage>
-        <button class="star-button" type="button" data-star aria-describedby="star-status">
-          <span class="visually-hidden">Inflate the star</span>
+      <div class="star-game" data-star-game>
+        <p class="game-howto" id="game-howto">Press the star to earn stars. Spend them to hire Junior Chicago, who presses it for you.</p>
+
+        <div class="star-stage" data-star-stage>
+          <div class="orbit" data-orbit aria-hidden="true"></div>
+          <button class="star-button" type="button" data-star aria-describedby="game-howto">
+            <span class="visually-hidden">Press the star to earn 1 star</span>
           <span class="star-body" aria-hidden="true">
             <svg class="star-svg" viewBox="0 0 400 400" focusable="false">
               <defs>
@@ -68,11 +72,66 @@
               <ellipse cx="262" cy="292" rx="34" ry="12" fill="#FFB3BA" opacity="0.35" filter="url(#star-soft)" transform="rotate(-24 262 292)"/>
             </svg>
           </span>
-        </button>
-        <span class="star-shadow" aria-hidden="true"></span>
-        <div class="star-burst" aria-hidden="true" data-star-burst></div>
-        <p class="star-status" id="star-status" role="status" data-star-status>Press the star.</p>
-        <p class="star-count" data-star-count hidden></p>
+          </button>
+          <span class="star-shadow" aria-hidden="true"></span>
+          <div class="star-burst" aria-hidden="true" data-star-burst></div>
+        </div>
+
+        <div class="game-panel" data-game-panel hidden>
+          <div class="bank">
+            <p class="bank-total"><svg class="bank-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.0 1.0 L14.6 7.5 L21.5 6.5 L17.2 12.0 L21.5 17.5 L14.6 16.5 L12.0 23.0 L9.4 16.5 L2.5 17.5 L6.8 12.0 L2.5 6.5 L9.4 7.5Z"/></svg><span data-bank>0</span> <span class="bank-unit" data-bank-unit>stars</span></p>
+            <p class="bank-rate"><span data-rate>0</span> per second</p>
+          </div>
+          <p class="star-status" role="status" data-star-status>Press the star to start earning.</p>
+
+          <div class="shop">
+            <h2 class="shop-title">Make it easier</h2>
+            <ul class="shop-list">
+              <li data-item="junior" data-cost="15" data-rate="1">
+                <button class="shop-item" type="button">
+                  <span class="shop-name">Hire Junior Chicago</span>
+                  <span class="shop-desc">Presses the star for you. +1 per second.</span>
+                  <span class="shop-cost"><svg class="cost-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.0 1.0 L14.6 7.5 L21.5 6.5 L17.2 12.0 L21.5 17.5 L14.6 16.5 L12.0 23.0 L9.4 16.5 L2.5 17.5 L6.8 12.0 L2.5 6.5 L9.4 7.5Z"/></svg><span data-cost-label>15</span></span>
+                  <span class="shop-owned" data-owned hidden>0</span>
+                </button>
+              </li>
+              <li data-item="email" data-cost="120" data-rate="5" hidden>
+                <button class="shop-item" type="button">
+                  <span class="shop-name">Email automation</span>
+                  <span class="shop-desc">Keeps earning while you sleep. +5 per second.</span>
+                  <span class="shop-cost"><svg class="cost-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.0 1.0 L14.6 7.5 L21.5 6.5 L17.2 12.0 L21.5 17.5 L14.6 16.5 L12.0 23.0 L9.4 16.5 L2.5 17.5 L6.8 12.0 L2.5 6.5 L9.4 7.5Z"/></svg><span data-cost-label>120</span></span>
+                  <span class="shop-owned" data-owned hidden>0</span>
+                </button>
+              </li>
+              <li data-item="seo" data-cost="800" data-rate="25" hidden>
+                <button class="shop-item" type="button">
+                  <span class="shop-name">SEO article</span>
+                  <span class="shop-desc">Ranks once, pays for years. +25 per second.</span>
+                  <span class="shop-cost"><svg class="cost-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.0 1.0 L14.6 7.5 L21.5 6.5 L17.2 12.0 L21.5 17.5 L14.6 16.5 L12.0 23.0 L9.4 16.5 L2.5 17.5 L6.8 12.0 L2.5 6.5 L9.4 7.5Z"/></svg><span data-cost-label>800</span></span>
+                  <span class="shop-owned" data-owned hidden>0</span>
+                </button>
+              </li>
+              <li data-item="roi" data-cost="5000" data-rate="120" hidden>
+                <button class="shop-item" type="button">
+                  <span class="shop-name">ROI calculator</span>
+                  <span class="shop-desc">Shows buyers exactly what it's worth. +120 per second.</span>
+                  <span class="shop-cost"><svg class="cost-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.0 1.0 L14.6 7.5 L21.5 6.5 L17.2 12.0 L21.5 17.5 L14.6 16.5 L12.0 23.0 L9.4 16.5 L2.5 17.5 L6.8 12.0 L2.5 6.5 L9.4 7.5Z"/></svg><span data-cost-label>5,000</span></span>
+                  <span class="shop-owned" data-owned hidden>0</span>
+                </button>
+              </li>
+              <li data-item="booth" data-cost="30000" data-rate="600" hidden>
+                <button class="shop-item" type="button">
+                  <span class="shop-name">Trade show booth</span>
+                  <span class="shop-desc">Stops the whole aisle. +600 per second.</span>
+                  <span class="shop-cost"><svg class="cost-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.0 1.0 L14.6 7.5 L21.5 6.5 L17.2 12.0 L21.5 17.5 L14.6 16.5 L12.0 23.0 L9.4 16.5 L2.5 17.5 L6.8 12.0 L2.5 6.5 L9.4 7.5Z"/></svg><span data-cost-label>30,000</span></span>
+                  <span class="shop-owned" data-owned hidden>0</span>
+                </button>
+              </li>
+            </ul>
+            <p class="shop-next" data-shop-next></p>
+            <button class="game-reset" type="button" data-reset>Start over</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>

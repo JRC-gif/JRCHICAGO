@@ -9,6 +9,7 @@ Running record of what's been decided. Newest entries at the bottom of each sect
 - 2026-10-19: Creative direction: site as a playable object (papertoilet.com, Cookie Clicker, Jeff Koons). One signature homepage interaction that never hides the work or the inquiry form.
 - 2026-10-19: Brand v0 (provisional) shipped in the first build: Chicago-flag palette, Bricolage Grotesque, glossy red Chicago star. See 04-brand-system.md.
 - 2026-10-19: Signature interaction v0: "Press the star." Each press inflates a glossy Chicago star; it pops into a burst at 24 presses and links to the inquiry form. Lifetime pops counter.
+- 2026-10-19: Signature interaction v1: star becomes a clicker game. Presses earn stars (currency); stars buy helpers that press for you: Hire Junior Chicago (+1/s), Email automation (+5/s), SEO article (+25/s), ROI calculator (+120/s), Trade show booth (+600/s). Theme: "it's easier with Junior." Pop bonus at 24 presses; progress and offline earnings (2-hour cap) saved in the browser; inquiry link appears at 100 stars/sec.
 - OPEN: Story behind "Junior"; whether the "dream big" motif stays. May reshape brand v0.
 
 ## Sitemap
