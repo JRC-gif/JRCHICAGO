@@ -1,0 +1,15 @@
+{
+  "name": "jrchicago",
+  "version": "1.0.0",
+  "private": true,
+  "description": "jrchicago.com, the Junior Chicago studio site, as a Cloudflare Worker with static assets",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "wrangler deploy --dry-run",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.151.2"
+  }
+}

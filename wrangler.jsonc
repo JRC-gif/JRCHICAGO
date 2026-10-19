@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Worker name. Changing it creates a new Worker in your Cloudflare account.
+  "name": "jrchicago",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-06-01",
+
+  // Static site lives in ./public. The Worker runs first on every request
+  // so it can handle /api/inquiry and add security headers.
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
+  },
+
+  "observability": { "enabled": true },
+
+  "vars": {
+    "PRODUCTION_HOST": "jrchicago.com",
+    "INQUIRY_TO": "christian@jrchicago.com",
+    "INQUIRY_FROM": "inquiry@jrchicago.com"
+  }
+
+  // ---- Step 3 in README: custom domain (only after jrchicago.com is on Cloudflare DNS) ----
+  // , "routes": [
+  //     { "pattern": "jrchicago.com", "custom_domain": true },
+  //     { "pattern": "www.jrchicago.com", "custom_domain": true }
+  //   ]
+
+  // ---- Option B in README: Cloudflare Email Routing instead of Resend ----
+  // , "send_email": [
+  //     { "name": "INQUIRY_EMAIL", "destination_address": "christian@jrchicago.com" }
+  //   ]
+}
